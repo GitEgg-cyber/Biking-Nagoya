@@ -11,15 +11,107 @@
     <title>Hello, Nagoya!</title>
   </head>
   <body>
+    <style>
+      .my-custom-row{
+        background-color: bisque;
+        height: 400px;
+      }
+    </style>
     <h1>Hello, Nagoya!</h1>
+
     <div class="container">
-      Eggs are delicious.
+      Exploring Nagoya can be sublime.
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://drive.google.com/file/d/1gDbwX-C3eMAOtphOA9ztBZU-x6SFAe7U/view?usp=sharing" class="d-block w-400" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-md-6 col-lg-2">Column 1</div>
+        <div class="col-sm-8 col-md-6 col-lg-8">Column 2</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 order-md-2">Column 1</div>
+        <div class="col-sm-6 order-md-1">Column 2</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 offset-2">Column 1</div>
+        <div class="col-sm-4 offset-1">Column 2</div>
+      </div>
+      <div class="row my-custom-row justify-content-center align-items-center">
+        <div class="col-sm-4"><div class="p-3 bg-light">Column 1</div></div>
+        <div class="col-sm-4"><div class="p-3 bg-light">Column 2</div></div>
+      </div>
+      <div class="row">
+        <div class="col">
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           Launch demo modal
+          </button>
+
+
+        </div>
+        <div class="col"><button type="button" class="btn btn-secondary">Secondary</button></div>
+        <div class="col"><button type="button" class="btn btn-danger">Danger</button></div>
+      </div>
+      
     </div>
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      const myCarouselElement = document.querySelector('#myCarousel')
+
+      const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 2000,
+        touch: false
+      })
+      const myCarousel = document.getElementById('myCarousel')
+
+      myCarousel.addEventListener('slide.bs.carousel', event => {
+        // do something...
+      })
+    </script>
   </body>
+
+
 </html>
